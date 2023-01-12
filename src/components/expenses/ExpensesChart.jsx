@@ -18,10 +18,13 @@ const ExpensesChart = (props) => {
   ]
 for(const expense of props.expenses) {
   const currentMonth = expense.date.getMonth()
+  // Массивтин for of методу аркылуу простан келген массивтеги объекттерди итерация кылып,  currentMonth переменныйга объекттин ичиндеги датаны алып ага getMonth аркылуу нумерация берилди(нумерация 0 дон башталат)
   chartDataPoints[currentMonth].value += expense.amount
+  // Массивтин итерация болгондогу ар бир объекттин значениясына объекттин amount'ту кошулду
 }
-return <Chart dataPoints={chartDataPoints}/>
 
+  return <Chart dataPoints={chartDataPoints}/>
+// Бул компонента бизге Chart компонентин кайтарат жана ага пропс катары массив берилди
 }
 
 export default ExpensesChart;

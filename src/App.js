@@ -32,7 +32,7 @@ const initData = [
 
 function App() {
  const [user, setUser] = useState(initData);
-
+ // абалды озгорткон функция, биринчи аргументи катары жогорудагы initData-массивти алды.
 
   const saveHandler = (expenseItem) => {
     setUser((prevState) => {
@@ -41,12 +41,16 @@ function App() {
         ...prevState
       ]
     })
+// NewExpense'теги значенияны поднятие кылуу учун тузулгон функция, параметр катары NewExpense'тен келген значенияны алат жана баштапкы абалды озгорткон функция ичинен чакырылып, ал функция  жаны жана акыркы значенияны кайтарат.
+
   }
 
   return (
     <div>
       <NewExpense onChange={saveHandler} />
+      {/* NewExpense props катары  saveHandler функциясын алды. */}
       <Expenses expenses={user} />
+      {/* Expenses  props катары состоянияны озгортуучу функциянын биринчи аргументин алды, анын ичинде initData-массиви бар. */}
     </div>
   );
 }
